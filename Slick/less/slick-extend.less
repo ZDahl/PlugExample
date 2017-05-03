@@ -1,0 +1,176 @@
+/* slick 皮肤扩展 */
+.slick-dotted.slick-slider{
+    margin-bottom: 0;
+}
+/* Banner常用 指示点圆 或 线条 左右导航*/
+.slick-banner{
+    // 左右滑块
+    .slick-prev, .slick-next{
+        z-index: 1000;
+        width: 40px;
+        height: 40px;
+        margin-top: -20px;
+    }
+    .slick-prev {
+        left: 25px;
+    }
+    .slick-next {
+        right: 25px;
+    }
+    .slick-prev:before, .slick-next:before{
+        font-size: 40px;
+        color: #b00e26;
+    }
+    
+    // 指示点为小圆点
+    .slick-dots{
+        bottom: 15px;
+        // 未选中幻灯片点颜色
+        li button:before{
+            color: red;    
+        }
+        // 未选中幻灯片点Hover,focus时颜色
+        li button:hover:before,
+        li button:focus:before{
+            opacity: 1;
+            //color: #;
+        }
+        
+        // 选中幻灯片点颜色
+        li.slick-active button:before{
+            color: orangered;
+        }
+    }
+    /* 指示点为线条 */
+    .slick-dots-line{
+        bottom: 15px;
+        li{
+            width: 40px;
+            height: 6px;
+            margin: 0 8px;
+            
+            button{
+                width: 40px;
+                height: 6px;
+                padding: 0;
+                
+                // 未选中 hover,before颜色
+                &:hover:before,&:focus:before{
+                    opacity: 1;
+                    background-color: #b00e27;
+                }
+                // 未选中颜色
+                &:before{
+                    width: 40px;
+                    height: 6px;
+                    opacity:.6;
+                    content: '';
+                    background-color: #FFFFFF;
+                    -webkit-border-radius: 3px;
+                    -ms-border-radius: 3px;
+                    -moz-border-radius: 3px;
+                    border-radius: 3px;
+                }
+            }
+            // 选中颜色
+            &.slick-active button:before{
+                opacity: 1;
+                background-color: #b00e27;
+            }
+        }
+    }
+}
+
+/* 新闻切换 圆点或数字 */
+.slick-news {
+    width: 400px;
+    height: 400px;
+    border: 5px solid #395699;
+    margin: 0 auto;
+    .slick-slide {
+        position: relative;
+        width: 390px;
+        height: 390px;
+        .slick-title {
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            display: block;
+            width: 100%;
+            height: 36px;
+            line-height: 36px;
+            color: #FFFFFF;
+            background-color: rgba(0,0,0,.5);
+            padding: 0 40px 0 10px;
+            position: relative;
+            left: 0;
+            bottom: 36px;
+        }
+    }
+    /* 直接显示指示点 */
+    .slick-dots {
+        text-align: right;
+        height: 36px;
+        bottom: 0;
+        right: 5px;
+        li {
+            margin: 0;
+            top: 4px;
+            button {
+                padding: 0;
+                &:hover:before,
+                &:focus:before {
+                    color: #8F0606;
+                    opacity: 0.75;
+                }
+                &:before {
+                    color: #DF7F1E;
+                    opacity: 0.25;
+                }
+            }
+            &.slick-active {
+                button {
+                    &:before {
+                        color: red;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    /* 指示点显示数字 */
+    .slick-dots-nums {
+        text-align: right;
+        height: 36px;
+        bottom: 0;
+        right: 5px;
+        li {
+            margin: 0;
+            top: 4px;
+            margin-right: 5px;
+            button {
+                line-height: 20px;
+                font-size: 12px;
+                color: #fff;
+                padding: 0;
+                background-color: #E08A32;
+                &:hover,
+                &:focus {
+                    background-color: #8F0606;
+                    color: #DF7F1E;
+                }
+                &:before {
+                    content: '';
+                }
+            }
+            &.slick-active {
+                button {
+                    background-color: #8F0606;
+                    color: #DF7F1E;
+                }
+            }
+        }
+    }
+}
+

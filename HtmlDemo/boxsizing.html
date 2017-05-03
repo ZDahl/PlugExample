@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>怪异盒模型与标准盒模型的区别</title>
+	<style type="text/css">
+		html,body,div,p{padding: 0;margin: 0;}
+		.borderBox
+		{
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+		div
+		{
+			width: 200px;
+			height: 200px;
+			padding: 10px;
+			border: 10px solid #000;
+			margin: 10px;
+		}
+	</style>	
+</head>
+<body>
+	<div class="borderBox">
+		<p>我是怪异盒模型</p>
+		<p>盒子总宽度包含内边距和边框，盒子总宽度不会根据边框和内边距发生变化</p>
+		<p>内容 = 宽度 - 内边距 - 边框  </p>
+		<p>160 = 200-10*2+10*2</p>
+	</div>
+	<div>
+		<p>我是标准盒模型</p>
+		<p>盒子宽度为内容宽度，总宽度为内容宽度加内边距和边框，根据内边距和边框变化</p>
+		<p>宽度 = 内容 + 内边距 + 边框</p>
+		<p>240 = 200 + 20 + 20</p>
+	</div>
+</body>
+</html>
